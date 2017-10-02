@@ -1,0 +1,23 @@
+{
+	"name": "holabs/logger",
+	"description": "User logging for Nette framework",
+	"keywords": ["logger", "nette"],
+	"license": ["BSD-3-Clause", "GPL-2.0", "GPL-3.0"],
+	"authors": [
+		{
+			"name": "Tomáš Holan",
+			"homepage": "https://tomasholan.eu"
+		}
+	],
+	"require": {
+		"php": ">=7.1",
+		"nette/utils": "^2.4"
+	},
+	"suggest": {
+		"tracy/tracy": "Debugger panel for development",
+        "nette/database": "Database layer for persist your logs"
+	},
+	"autoload": {
+		"classmap": ["src"]
+	}
+}
