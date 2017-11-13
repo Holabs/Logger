@@ -24,12 +24,13 @@ use Tracy\Dumper;
 
 <div class="nette-inner holabs-logger-inner">
 	<table class="holabs-logger-table">
-		<tr><th>Time</th><th>Type</th><th style="min-width: 150px">Parameters</th><th>IP</th></tr>
+		<tr><th>Time</th><th>Type</th><th style="min-width: 150px">Parameters</th><th>User ID</th><th>IP</th></tr>
 		<?php foreach ( $logs as $log ): ?>
 			<tr>
 				<td><?php echo $log->getTime()->format('H:i:s'); ?></td>
 				<td><?php echo $log->getAction(); ?></td>
 				<td><?php echo Dumper::toHtml($log->getParams()); ?></td>
+				<td><?php echo $log->getUserId(); ?></td>
 				<td><?php echo $log->getIp(); ?></td>
 			</tr>
 		<?php endforeach; ?>
