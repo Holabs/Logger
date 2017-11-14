@@ -3,7 +3,7 @@
 namespace Holabs;
 
 use Holabs\Logger\ILogger;
-use Holabs\Logger\Log;
+use Holabs\Logger\ILog;
 use Holabs\Logger\Storages\IStorage;
 use Nette\Security\User;
 use Nette\SmartObject;
@@ -14,7 +14,7 @@ use Nette\Http\Request;
  * @package      holabs/logger
  * @copyright    Copyright © 2016, Tomáš Holan [www.tomasholan.eu]
  *
- * @method onLog(Logger $sender, Log $log) -- Occurs when new log is written
+ * @method onLog(Logger $sender, ILog $log) -- Occurs when new log is written
  */
 class Logger implements ILogger {
 
@@ -48,9 +48,9 @@ class Logger implements ILogger {
 	 * Write log to database
 	 * @param string $action
 	 * @param array|null  $parameters
-	 * @return Log
+	 * @return ILog
 	 */
-	public function log(string $action, array $parameters = NULL): Log {
+	public function log(string $action, array $parameters = NULL): ILog {
 		$ip = $this->request->getRemoteAddress();
 		$userAgent = $this->request->getHeader('User-Agent');
 
@@ -65,7 +65,7 @@ class Logger implements ILogger {
 	 * @param string|NULL $order
 	 * @param int|NULL    $limit
 	 * @param int|NULL    $offset
-	 * @return Log[]
+	 * @return ILog[]
 	 */
 	public function read(array $by = NULL, string $order = NULL, int $limit = NULL, int $offset = NULL): array {
 		return $this->getStorage()->read($by, $order, $limit, $offset);

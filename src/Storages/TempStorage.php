@@ -3,6 +3,7 @@
 namespace Holabs\Logger\Storages;
 
 use Holabs\Logger\Log;
+use Holabs\Logger\ILog;
 use Nette\Utils\DateTime;
 
 /**
@@ -22,7 +23,7 @@ class TempStorage implements IStorage {
 	 * @param string|NULL $userId
 	 * @param string|NULL $ip
 	 * @param string|NULL $userAgent
-	 * @return Log
+	 * @return ILog
 	 */
 	public function write(
 		string $action,
@@ -30,7 +31,7 @@ class TempStorage implements IStorage {
 		string $userId = NULL,
 		string $ip = NULL,
 		string $userAgent = NULL
-	): Log {
+	): ILog {
 		end($this->logs);
 		$id = key($this->logs) ? : -1;
 		$id++;
@@ -45,7 +46,7 @@ class TempStorage implements IStorage {
 	 * @param string|NULL $order
 	 * @param int|NULL    $limit
 	 * @param int|NULL    $offset
-	 * @return Log[]
+	 * @return ILog[]
 	 */
 	public function read(array $by = NULL, string $order = NULL, int $limit = NULL, int $offset = NULL): array {
 		return $this->logs;

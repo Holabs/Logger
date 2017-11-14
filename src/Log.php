@@ -2,7 +2,6 @@
 
 namespace Holabs\Logger;
 
-use Nette\SmartObject;
 use Nette\Utils\DateTime;
 
 /**
@@ -10,9 +9,7 @@ use Nette\Utils\DateTime;
  * @package      holabs/logger
  * @copyright    Copyright © 2016, Tomáš Holan [www.tomasholan.eu]
  */
-class Log {
-
-	use SmartObject;
+class Log implements ILog {
 
 	/** @var  int|null */
 	public $id;

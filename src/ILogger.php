@@ -16,9 +16,9 @@ interface ILogger {
 	/**
 	 * @param string     $action
 	 * @param array|null $parameters
-	 * @return Log
+	 * @return ILog
 	 */
-	public function log(string $action, array $parameters = NULL): Log;
+	public function log(string $action, array $parameters = NULL): ILog;
 
 	/**
 	 * @return IStorage
@@ -30,7 +30,7 @@ interface ILogger {
 	 * @param string|NULL  $order
 	 * @param integer|NULL $limit
 	 * @param integer|NULL $offset
-	 * @return Log[]
+	 * @return ILog[]
 	 */
 	public function read(array $by = NULL, string $order = NULL, int $limit = NULL, int $offset = NULL): array;
 }

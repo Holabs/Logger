@@ -2,6 +2,7 @@
 
 namespace Holabs\Logger\Storages;
 
+use Holabs\Logger\ILog;
 use Holabs\Logger\Log;
 use Nette\Database\Context;
 use Nette\Database\Table\Selection;
@@ -34,7 +35,7 @@ class NetteDatabaseStorage implements IStorage {
 	 * @param string|null $userId
 	 * @param string|null $ip
 	 * @param string|null $userAgent
-	 * @return Log
+	 * @return ILog
 	 */
 	public function write(
 		string $action,
@@ -42,7 +43,7 @@ class NetteDatabaseStorage implements IStorage {
 		string $userId = NULL,
 		string $ip = NULL,
 		string $userAgent = NULL
-	): Log {
+	): ILog {
 
 		$result = $this->table->insert(
 			[
@@ -72,7 +73,7 @@ class NetteDatabaseStorage implements IStorage {
 	 * @param string|null $order
 	 * @param int|null    $limit
 	 * @param int|null    $offset
-	 * @return Log[]
+	 * @return ILog[]
 	 */
 	public function read(array $by = NULL, string $order = NULL, int $limit = NULL, int $offset = NULL): array {
 

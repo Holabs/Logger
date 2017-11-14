@@ -23,9 +23,9 @@ trait TLogger {
 	/**
 	 * @param string     $action
 	 * @param array|null $params
-	 * @return Log
+	 * @return ILog
 	 */
-	protected function log(string $action, array $params = NULL): Log {
+	protected function log(string $action, array $params = NULL): ILog {
 		return $this->logger->log($action, $params);
 	}
 
