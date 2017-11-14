@@ -17,7 +17,7 @@ class Log implements ILog {
 	/** @var string Action name */
 	private $action;
 
-	/** @var DateTime|null Event time */
+	/** @var DateTime Event time */
 	private $time;
 
 	/** @var array|null All necessary parameters */
@@ -40,16 +40,16 @@ class Log implements ILog {
 	 * @param string|null   $userId
 	 * @param string|null   $ip
 	 * @param string|null   $userAgent
-	 * @param DateTime|null $time
+	 * @param DateTime $time
 	 */
 	public function __construct(
 		string $id = NULL,
 		string $action,
+		DateTime $time,
 		array $params = NULL,
 		string $userId = NULL,
 		string $ip = NULL,
-		string $userAgent = NULL,
-		DateTime $time = NULL
+		string $userAgent = NULL
 	) {
 		$this->id = $id;
 		$this->action = $action;
@@ -75,9 +75,9 @@ class Log implements ILog {
 	}
 
 	/**
-	 * @return DateTime|null
+	 * @return DateTime
 	 */
-	public function getTime(): ?DateTime {
+	public function getTime(): DateTime {
 		return $this->time;
 	}
 

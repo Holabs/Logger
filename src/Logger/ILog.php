@@ -24,9 +24,9 @@ interface ILog {
 	public function getAction(): string;
 
 	/**
-	 * @return DateTime|null
+	 * @return DateTime
 	 */
-	public function getTime(): ?DateTime;
+	public function getTime(): DateTime;
 
 	/**
 	 * @return array|null

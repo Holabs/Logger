@@ -35,7 +35,7 @@ class TempStorage implements IStorage {
 		end($this->logs);
 		$id = key($this->logs) ? : -1;
 		$id++;
-		$log = new Log($id, $action, $parameters, $userId, $ip, $userAgent, new DateTime());
+		$log = new Log($id, $action, new DateTime(), $parameters, $userId, $ip, $userAgent);
 		$this->logs[] = $log;
 
 		return $log;

@@ -59,11 +59,11 @@ class NetteDatabaseStorage implements IStorage {
 		return new Log(
 			$result->offsetGet('id'),
 			$action,
+			$result->offsetGet('time'),
 			$parameters,
 			$userId,
 			$ip,
-			$userAgent,
-			$result->offsetGet('time')
+			$userAgent
 		);
 	}
 
@@ -82,7 +82,7 @@ class NetteDatabaseStorage implements IStorage {
 		$logs = [];
 		foreach ($result as $log) {
 			$logs[] = new Log(
-				$log->id, $log->action, $log->params, $log->userId, $log->ip, $log->userAgent, $log->time
+				$log->id, $log->action, $log->time, $log->params, $log->userId, $log->ip, $log->userAgent
 			);
 		}
 
