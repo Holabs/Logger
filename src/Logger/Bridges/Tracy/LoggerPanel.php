@@ -3,7 +3,7 @@
 namespace Holabs\Logger\Bridges\Tracy;
 
 use Holabs\Logger\ILogger;
-use Holabs\Logger\Log;
+use Holabs\Logger\ILog;
 use Nette\SmartObject;
 use Nette\Utils\ArrayList;
 use Tracy\IBarPanel;
@@ -17,7 +17,7 @@ class LoggerPanel implements IBarPanel {
 
 	use SmartObject;
 
-	/** @var ArrayList|Log[] */
+	/** @var ArrayList|ILog[] */
 	private $logs;
 
 	/** @var Integer */
@@ -42,9 +42,9 @@ class LoggerPanel implements IBarPanel {
 
 	/**
 	 * @param ILogger $logger
-	 * @param Log     $log
+	 * @param ILog     $log
 	 */
-	public function registerLog(ILogger $logger, Log $log) {
+	public function registerLog(ILogger $logger, ILog $log) {
 		$this->count++;
 		$this->logs[] = $log;
 	}
