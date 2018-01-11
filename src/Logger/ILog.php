@@ -14,9 +14,9 @@ use Nette\Utils\DateTime;
 interface ILog {
 
 	/**
-	 * @return int|null
+	 * @return mixed|null
 	 */
-	public function getId(): ?int;
+	public function getId();
 
 	/**
 	 * @return string
