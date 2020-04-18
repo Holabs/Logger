@@ -4,7 +4,7 @@ namespace Holabs\Logger\Bridges\Nette;
 
 use Holabs\Logger;
 use Holabs\Logger\Storages\TempStorage;
-use Nette\DI\Extensions\ExtensionsExtension;
+use Nette\DI\CompilerExtension;
 
 
 /**
@@ -12,7 +12,7 @@ use Nette\DI\Extensions\ExtensionsExtension;
  * @package      holabs/logger
  * @copyright    Copyright © 2017, Tomáš Holan [www.tomasholan.eu]
  */
-class LoggerExtension extends ExtensionsExtension {
+class LoggerExtension extends CompilerExtension {
 
 	public function loadConfiguration() {
 
